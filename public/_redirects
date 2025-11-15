@@ -1,3 +1,0 @@
-# Redireciona todas as requisições para index.html para suportar SPA
-# Este arquivo é usado pelo Netlify e outras plataformas de hospedagem
-/*  /index.html  200
