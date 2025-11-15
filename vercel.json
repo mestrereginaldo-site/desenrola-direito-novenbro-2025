@@ -2,29 +2,30 @@
   "version": 2,
   "builds": [
     {
-      "src": "server-deploy.js",
-      "use": "@vercel/node"
+      "src": "package.json",
+      "use": "@vercel/static-build"
     },
     {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "src": "server/index.ts",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "server-deploy.js"
+      "dest": "server/index.ts"
     },
     {
       "src": "/(.*)",
-      "dest": "client/dist/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "client/dist/index.html"
+      "dest": "/$1"
     }
-  ]
+  ],
+  "functions": {
+    "server/index.ts": {
+      "includeFiles": "dist/**"
+    }
+  },
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/public"
 }
