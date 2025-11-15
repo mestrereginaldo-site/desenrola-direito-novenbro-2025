@@ -4,27 +4,14 @@
     {
       "src": "package.json",
       "use": "@vercel/static-build"
-    },
-    {
-      "src": "server/index.ts",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "server/index.ts"
-    },
     {
       "src": "/(.*)",
       "dest": "/$1"
     }
   ],
-  "functions": {
-    "server/index.ts": {
-      "includeFiles": "dist/**"
-    }
-  },
   "installCommand": "npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public"
