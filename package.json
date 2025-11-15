@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "echo 'Build feito pelo Vercel diretamente no client'",
-    "dev": "cd client && npm run dev",
-    "start": "cd client && npm run preview"
+    "build": "cd client && npm run build",
+    "dev": "cd client && npm run dev"
   }
 }
