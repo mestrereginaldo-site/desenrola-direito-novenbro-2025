@@ -9,10 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/index.html"
     }
-  ],
-  "installCommand": "npm install",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/public"
+  ]
 }
